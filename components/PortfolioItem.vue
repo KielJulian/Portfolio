@@ -154,6 +154,11 @@ blockquote {
         font-size: 18px;
     }
 
+    svg   {
+        width: 14px;
+        height: 14px;
+    }
+
     .author-content {
         justify-content: center;
         padding-top: 1rem;
