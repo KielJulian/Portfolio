@@ -5,7 +5,7 @@
 
     <div id="portfolio" class="portfolio-itemlist">
       <div class="portfolio-titel">
-        <h2>Portfolio</h2>
+        <h3>Portfolio</h3>
         <p>Hier sind einige meiner bisherigen Webdesign-Projekte.</p>
       </div>
 
@@ -66,7 +66,7 @@
 </template>
 
 <style scoped>
-h2 {
+h3 {
   font-size: 20px;
   padding-bottom: 8px;
 }

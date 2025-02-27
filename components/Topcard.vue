@@ -1,9 +1,9 @@
 <template>
     <div class="topcard-container">
         <div class="topcard-content">
-            <h2>Julian Kiel</h2>
+            <h1>Julian Kiel</h1>
             <hr>
-            <p>Moderne Optik, intuitive Bedienung - <br>für eine Website, die einfach funktioniert.</p>
+            <h2>Moderne Optik, intuitive Bedienung - <br>für eine Website, die einfach funktioniert.</h2>
         </div>
     </div>
 </template>
@@ -19,9 +19,19 @@
     background-repeat: no-repeat;
 }
 
-h2 {
+h1 {
     font-size: 24px;
     padding-bottom: 12px;
+}
+
+h2 {
+    font-size: 16px;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    text-align: center;
+    padding-top: 8px;
 }
 
 .topcard-content {
@@ -49,10 +59,6 @@ hr {
     border-top: 1px solid var(--white);
 }
 
-p {
-    text-align: center;
-    padding-top: 8px;
-}
 @media (max-width: 800px) {
     .topcard-container {
         align-items: flex-start;
