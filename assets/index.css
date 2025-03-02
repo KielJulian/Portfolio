@@ -6,7 +6,6 @@
     --blockquote: #aaaaaa;
     --link-hover: var(--white);
     --topcardwhite: #D0D0D0;
-    --fun-transition: transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
   }
 
 @font-face {
