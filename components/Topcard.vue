@@ -37,9 +37,11 @@ h2 {
 .topcard-content {
     width: 100%;
     min-height: 600px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url("/img/topcard.jpg");
+    color: var(--rewhite);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.898), rgba(0, 0, 0, 0)), url("/img/topcardc.jpg");
+    filter: grayscale(100%);
     background-size: cover; 
-    background-position: center center;
+    background-position: top center;
     border-radius: 16px;
     display: flex;
     justify-content: center;
@@ -56,7 +58,7 @@ h2 {
 hr {
     width: 50%;
     border: none;
-    border-top: 1px solid var(--white);
+    border-top: 1px solid var(--rewhite);
 }
 
 @media (max-width: 800px) {

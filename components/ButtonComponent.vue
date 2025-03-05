@@ -1,0 +1,26 @@
+<template>
+    <button @click="toggleMode" class="mode-toggle">
+      <SunIcon v-if="colorMode.preference === 'dark'" />
+      <MoonIcon v-else />
+    </button>
+  </template>
+  
+  <script setup>
+  import { useColorModeToggle } from '@/composables/useColorModeToggle';
+  import SunIcon from './SunIcon.vue';
+  import MoonIcon from './MoonIcon.vue';
+  
+  const { colorMode, toggleMode } = useColorModeToggle();
+  </script>
+  
+  <style scoped>
+  .mode-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  </style>

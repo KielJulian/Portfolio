@@ -4,6 +4,7 @@
       <div class="nav-items">
         <a @click="scrollToSection('#portfolio')">Portfolio</a>
         <a @click="scrollToSection('#contact')">Kontakt</a>
+        <ButtonComponent />
       </div>
     </nav>
 </template>
@@ -21,11 +22,14 @@
         gap: 1.5rem;
 }
 a:hover {
-  color: var(--link)
+  color: var(--link-hover);
 }
+
 </style>
 
 <script setup>
+const { toggleMode } = useColorModeToggle();
+
 const scrollToSection = (id) => {
   const section = document.querySelector(id);
   if (section) {

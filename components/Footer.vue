@@ -17,7 +17,7 @@
   <style scoped>
   footer {
     min-height: 8rem;
-    color: var(--link);
+    color: var(--white);
     margin-top: auto;
     display: flex;
     justify-content: center;

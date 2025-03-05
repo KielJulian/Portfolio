@@ -60,7 +60,7 @@ svg {
 }
     
 a:hover .icon {
-  stroke: white;
+  stroke: var(--white)
 }
 
 img {

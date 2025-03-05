@@ -1,13 +1,46 @@
 :root {
-    --white: white;
-    --background: #171717;
-    --link: #6b6b6b;
-    --line: #2b2b2b;
-    --blockquote: #aaaaaa;
-    --link-hover: var(--white);
-    --topcardwhite: #D0D0D0;
+    --gray-0: #FFFFFF;
+    --gray-1: #D9D9D9;  
+    --gray-2: #B3B3B3;  
+    --gray-3: #8F8F8F;  
+    --gray-4: #6B6B6B;  
+    --gray-5: #494949;
+    --gray-6: #2A2A2A;  
+    --gray-7: #151515;  
+    --gray-8: #090909;  
+    --gray-9: #030303;  
+    --gray-10: #000000;
+
+    --white: var(--gray-0);
+    --rewhite: white;
+    --background: var(--gray-7);
+    --link-hover: var(--gray-3);
+    --line: var(--gray-6);
+    --blockquote: var(--gray-2);
+    --link: var(--gray-0);
+}
+
+.light-mode {
+    --gray-0: #000000;
+    --gray-1: #030303;  
+    --gray-2: #090909;  
+    --gray-3: #151515;  
+    --gray-4: #2A2A2A;  
+    --gray-5: #494949;
+    --gray-6: #6B6B6B;  
+    --gray-7: #8F8F8F;  
+    --gray-8: #B3B3B3;  
+    --gray-9: #D9D9D9;  
+    --gray-10: #FFFFFF;
+    
+    --background: var(--gray-10);
+    --link-hover: var(--gray-7);
+   
   }
 
+html.light-mode .topcard-content {
+    filter: none;
+}
 @font-face {
     font-family: 'SpaceMono';
     src: url('/fonts/SpaceMono-Regular.woff2') format('woff2');
@@ -52,7 +85,7 @@ h1, h2, h3, h4, h5, h6, hr {
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: var(--white);
     font-size: inherit;
     font-family: inherit;
 }
@@ -70,4 +103,3 @@ p {
 a:hover, button:hover {
     cursor: pointer;
   }
-
