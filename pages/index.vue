@@ -1,5 +1,6 @@
 <template>
   <div>
+    <ButtonComponent />
     <Navbar />
     <Topcard />
 

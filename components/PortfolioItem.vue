@@ -66,6 +66,11 @@ a:hover .icon {
 img {
     width: 100%;
 }
+
+.portfolio-image {
+    border: 1px solid #151515;
+}
+
 .portfolio-item {
     opacity: 0;
     transform: perspective(1200px) translateY(40px);

@@ -15,6 +15,9 @@
   
   <style scoped>
   .mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background: none;
     border: none;
     padding: 0;
@@ -22,5 +25,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+    z-index: 1000;
+}
   </style>

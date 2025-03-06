@@ -4,7 +4,6 @@
       <div class="nav-items">
         <a @click="scrollToSection('#portfolio')">Portfolio</a>
         <a @click="scrollToSection('#contact')">Kontakt</a>
-        <ButtonComponent />
       </div>
     </nav>
 </template>
