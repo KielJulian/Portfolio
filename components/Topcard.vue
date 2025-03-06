@@ -38,10 +38,10 @@ h2 {
     width: 100%;
     min-height: 600px;
     color: var(--rewhite);
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.870), rgba(0, 0, 0, 0)), url("/img/topcardc.jpg");
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.870), rgba(0, 0, 0, 0)), url("/img/topcardc2.jpg");
     filter: grayscale(100%);
     background-size: cover; 
-    background-position: top center;
+    background-position: 70% 30%;
     border-radius: 16px;
     display: flex;
     justify-content: center;

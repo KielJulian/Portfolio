@@ -172,6 +172,7 @@ blockquote {
     blockquote {
         text-align: center;
         font-size: 14px;
+        line-height: 1.4;
     }
 }
     </style>
