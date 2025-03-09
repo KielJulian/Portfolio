@@ -1,4 +1,5 @@
 <template>
+  <ButtonComponent />
     <div class="page-container">
       <section>
         <div class="imp-container">
