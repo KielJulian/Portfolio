@@ -41,6 +41,7 @@
 html.light-mode .topcard-content {
     filter: none;
 }
+
 @font-face {
     font-family: 'SpaceMono';
     src: url('/fonts/SpaceMono-Regular.woff2') format('woff2');

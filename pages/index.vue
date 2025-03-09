@@ -41,23 +41,15 @@
           <p>Facharzt für Allgemeinmedizin, Co-Founder</p>
         </template>
       </PortfolioItem>
-      <!-- 
+
       <PortfolioItem title="Dr. Georg Schulze-Eyßing" id="3" link="https://dr-schulze-eyssing.eu/">
         <div class="container">
           <div class="role">Rolle:</div>
           <div>Designentwurf, Designumsetzung, Webseitenaufbau, Struktur- und Layout-Anpassungen, Performance-Optimierung</div>
         </div>
-        <template #quote>
-      Herr Kiel setzte meine Praxis-Homepage schnell und professionell um. 
-      Er beriet mich gezielt zu sinnvollen Elementen und optimierte die Informationsstruktur. Patienten finden alles schnell, und ich spare viele Anfragen. 
-      Änderungen erfolgen zeitnah und ansprechend.
-    </template>
-    <template #author>
-      <cite>Dr. Georg Schulze-Eyßing</cite>
-      <p>Praxisinhaber, Facharzt</p>
-    </template>
+
   </PortfolioItem>
-  -->
+
 </div>
 
   <Contact />
