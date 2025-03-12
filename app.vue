@@ -17,5 +17,7 @@
 </style>
 
 <script setup>
-  import { Analytics } from '@vercel/analytics/nuxt'
+  import { inject } from '@vercel/analytics';
+
+  gstinject();
 </script>
