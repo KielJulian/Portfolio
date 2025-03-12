@@ -1,4 +1,5 @@
 <template>
+  <Analytics />
   <div class="main">
     <NuxtPage />
   </div>
@@ -14,3 +15,7 @@
   max-width: 100%;
 }
 </style>
+
+<script setup>
+  import { Analytics } from '@vercel/analytics/nuxt'
+</script>
