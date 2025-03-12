@@ -19,5 +19,5 @@
 <script setup>
   import { inject } from '@vercel/analytics';
 
-  gstinject();
+  inject();
 </script>
