@@ -1,5 +1,4 @@
 <template>
-  <Analytics />
   <div class="main">
     <NuxtPage />
   </div>
