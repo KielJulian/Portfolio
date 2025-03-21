@@ -62,6 +62,10 @@ img {
     box-shadow: var(--shadow-card);
 }
 
+.dark-mode .portfolio-image {
+    box-shadow: none;
+}
+
 .title {
     font-size: 24px;
     min-width: 0;

@@ -18,8 +18,8 @@
     --line: var(--gray-6);
     --blockquote: var(--gray-2);
     --link: var(--gray-0);
-    --img-border: var(--gray-9);
-
+    --img-border: var(--gray-7);
+    
     --border-radius-card: 16px;
     --shadow-card: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
@@ -40,6 +40,7 @@
     --background: var(--gray-10);
     --link-hover: var(--gray-7);
     --line: var(--gray-10);
+    --img-border: var(--gray-9);
   }
 
 html.light-mode .topcard-content {
