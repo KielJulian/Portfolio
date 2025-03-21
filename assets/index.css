@@ -18,7 +18,7 @@
     --line: var(--gray-6);
     --blockquote: var(--gray-2);
     --link: var(--gray-0);
-    --img-border: var(--gray-8);
+    --img-border: var(--gray-9);
 
     --border-radius-card: 16px;
     --shadow-card: rgba(149, 157, 165, 0.2) 0px 8px 24px;

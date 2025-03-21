@@ -58,7 +58,7 @@ img {
 
 .portfolio-image {
     border-radius: var(--border-radius-card);
-    border: 0.5px solid var(--img-border);
+    border: 1px solid var(--img-border);
     box-shadow: var(--shadow-card);
 }
 
