@@ -42,6 +42,26 @@ h3 {
     min-width: 0;
 }
 
+article {
+    padding-bottom: 8rem;
+    display: flex;
+    flex-direction: column;
+}
+    
+a:hover .icon {
+  stroke: var(--white)
+}
+
+img {
+    width: 100%;
+}
+
+.portfolio-image {
+    border-radius: var(--border-radius-card);
+    border: 0.5px solid #151515;
+    box-shadow: var(--shadow-card);
+}
+
 .title {
     font-size: 24px;
     min-width: 0;
@@ -59,23 +79,6 @@ h3 {
 }
 
     
-article {
-    padding-bottom: 8rem;
-    display: flex;
-    flex-direction: column;
-}
-    
-a:hover .icon {
-  stroke: var(--white)
-}
-
-img {
-    width: 100%;
-}
-
-.portfolio-image {
-    border: 1px solid #151515;
-}
 
 .portfolio-item {
     opacity: 0;

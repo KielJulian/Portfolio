@@ -42,7 +42,7 @@ h2 {
     filter: grayscale(100%);
     background-size: cover; 
     background-position: 70% 30%;
-    border-radius: 16px;
+    border-radius: var(--border-radius-card);
     display: flex;
     justify-content: center;
     align-items: center;

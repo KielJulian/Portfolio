@@ -18,6 +18,9 @@
     --line: var(--gray-6);
     --blockquote: var(--gray-2);
     --link: var(--gray-0);
+
+    --border-radius-card: 16px;
+    --shadow-card: 0 6px 14px -12px #000000;
 }
 
 .light-mode {
@@ -35,7 +38,7 @@
     
     --background: var(--gray-10);
     --link-hover: var(--gray-7);
-   
+    --line: var(--gray-10);
   }
 
 html.light-mode .topcard-content {
