@@ -21,7 +21,7 @@
     --img-border: var(--gray-7);
     
     --border-radius-card: 16px;
-    --shadow-card: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --shadow-card: rgba(149, 157, 165, 0.2) 0px 8px 50px -12px;
 }
 
 .light-mode {
@@ -37,7 +37,7 @@
     --gray-9: #D9D9D9;  
     --gray-10: #FFFFFF;
     
-    --background: var(--gray-10);
+    --background: #f3f3f3;
     --link-hover: var(--gray-7);
     --line: var(--gray-10);
     --img-border: var(--gray-9);
