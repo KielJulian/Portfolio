@@ -8,7 +8,7 @@
   </template>
   
   <script setup>
-  const email = 'julian.kiel@gmail.com';
+  const email = 'hi@juliankiel.dev';
   </script>
 
   <style scoped>

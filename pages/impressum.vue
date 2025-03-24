@@ -5,7 +5,7 @@
         <div class="imp-container">
           <h1>Impressum</h1>
           <p>Julian Kiel<br>Ohmstr. 5<br>83607 Holzkirchen</p>
-          <p class="address">julian.kiel@gmail.com</p>
+          <p class="address">hi@juliankiel.dev</p>
           <p>USt-IdNr. DE52373189606</p>
         </div>
       </section>
