@@ -1,9 +1,13 @@
 <template>
-    <button @click="toggleMode" class="mode-toggle">
-      <SunIcon v-if="colorMode.preference === 'dark'" />
-      <MoonIcon v-else />
-    </button>
-  </template>
+  <button 
+    @click="toggleMode" 
+    class="mode-toggle" 
+    :aria-label="colorMode.preference === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+  >
+    <SunIcon v-if="colorMode.preference === 'dark'" />
+    <MoonIcon v-else />
+  </button>
+</template>
   
   <script setup>
   import { useColorModeToggle } from '@/composables/useColorModeToggle';
