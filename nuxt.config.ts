@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     classPrefix: '',
     classSuffix: '-mode',
     storage: 'localStorage',
-    storageKey: 'nuxt-color-mode'
+    storageKey: 'nuxt-color-mode',
+    disableTransition: true
   }
 });
