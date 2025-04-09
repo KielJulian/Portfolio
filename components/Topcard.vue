@@ -65,6 +65,7 @@ hr {
     .topcard-container {
         align-items: flex-start;
         height: calc(100svh - (67px));
+        max-height: 1200px;
     }
     
     .topcard-content {
