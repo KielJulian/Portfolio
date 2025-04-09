@@ -10,7 +10,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Professionelles Webdesign und moderne Webentwicklung für Unternehmen. Maßgeschneiderte Lösungen für eine starke Online-Präsenz.' },
         { name: 'keywords', content: 'Webdesign, Webentwicklung, Firmenwebsite, moderne Webseiten, responsive Design, Nuxt, SEO' },
         { name: 'author', content: 'Julian Kiel' },
-        { name: 'robots', content: 'index, follow' },
+        { name: 'robots', content: 'index, follow, noarchive, noimageindex' },
         { property: 'og:title', content: 'Julian Kiel – Webentwickler & Designer' },
         { property: 'og:description', content: 'Maßgeschneiderte Webseiten für Unternehmen – Modernes Webdesign & Entwicklung mit Nuxt.' },
         { property: 'og:type', content: 'website' },

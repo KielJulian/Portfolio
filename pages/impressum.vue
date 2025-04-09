@@ -13,33 +13,41 @@
     </div>
   </template>
   
-  <style scoped>
-  *:nth-child(n+2) {
-    color: var(--blockquote);
-  }
-  .page-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+<script setup>
+useHead({
+  meta: [
+    { name: 'robots', content: 'noindex, nofollow' }
+  ]
+})
+</script>
 
-  h1 {
-    padding-bottom: 24px;
-  }
-  .address {
-    padding-bottom: 12px;
-  }
-
-  @media (max-width: 800px) {
-    .page-container {
-      height: 100dvh;
-    }
+<style scoped>
+*:nth-child(n+2) {
+  color: var(--blockquote);
 }
-  </style>
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  padding-bottom: 24px;
+}
+.address {
+  padding-bottom: 12px;
+}
+
+@media (max-width: 800px) {
+  .page-container {
+    height: 100dvh;
+  }
+}
+</style>

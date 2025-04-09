@@ -10,7 +10,7 @@
         <p>Hier sind einige meiner bisherigen Webdesign-Projekte.</p>
       </div>
 
-      <PortfolioItem title="Dr. Georg Schulze-Eyßing" id="3" link="https://dr-schulze-eyssing.eu/">
+      <PortfolioItem title="Dr. Georg Schulze-Eyßing" id="3" link="https://dr-schulze-eyssing.eu/" data-noindex="true" :noIndex="true">
         <div class="container">
           <div class="role">Rolle:</div>
           <div>Designentwurf, Designumsetzung, Webseitenaufbau, Struktur- und Layout-Anpassungen, Performance-Optimierung</div>
@@ -18,7 +18,7 @@
 
   </PortfolioItem>
   
-  <PortfolioItem title="Laserklinik Leimbachtal" id="2" link="https://laserklinik-leimbachtal.de/">
+  <PortfolioItem title="Laserklinik Leimbachtal" id="2" link="https://laserklinik-leimbachtal.de/" data-noindex="true" :noIndex="true">
     <div class="container">
       <div class="role">Rolle:</div>
       <div>Designumsetzung, Integration von Design-Elementen, Struktur- und Layout-Anpassungen, Performance-Optimierung</div>
@@ -34,7 +34,7 @@
     </template>
   </PortfolioItem>
   
-  <PortfolioItem title="Hausarztpraxis Leimbachtal" id="1" link="https://hausarztpraxis-leimbachtal.org/">
+  <PortfolioItem title="Hausarztpraxis Leimbachtal" id="1" link="https://hausarztpraxis-leimbachtal.org/" data-noindex="true" :noIndex="true">
     <div class="container">
       <div class="role">Rolle:</div>
       <div>Designüberarbeitung, Webseitenaufbau, Struktur- und Layout-Anpassungen, Performance-Optimierung</div>
@@ -57,6 +57,27 @@
   <Footer />
 </div>
 </template>
+
+<script setup>
+useHead({
+  script: [
+    {
+      children: `
+        document.addEventListener('DOMContentLoaded', () => {
+          const portfolioItems = document.querySelectorAll('[data-noindex="true"]');
+          portfolioItems.forEach(item => {
+            const meta = document.createElement('meta');
+            meta.name = 'robots';
+            meta.content = 'noindex';
+            item.appendChild(meta);
+          });
+        });
+      `,
+      type: 'text/javascript'
+    }
+  ]
+});
+</script>
 
 <style scoped>
 h3 {
