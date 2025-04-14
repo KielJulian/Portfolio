@@ -1,15 +1,13 @@
 <template>
-    <section id="contact">
-      <p>Ich freue mich über eine Anfrage.</p>
-      <p>
-        <a :href="'mailto:' + email">{{ email }}</a>
-      </p>
-    </section>
-  </template>
-  
-  <script setup>
-  const email = 'hi@juliankiel.dev';
-  </script>
+  <section id="contact">
+    <p>Ich freue mich über eine Anfrage.</p>
+    <p>{{ email }}</p>
+  </section>
+</template>
+
+<script setup>
+const email = 'hi@juliankiel.dev';
+</script>
 
   <style scoped>
  section {
