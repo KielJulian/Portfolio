@@ -23,23 +23,17 @@ section p:nth-of-type(1) {
 section p:nth-of-type(2) {
   border-bottom: 2px solid var(--white); 
   padding: 32px 0 24px 0;
+  font-size: 32px;
 }
-
-a {
-    font-size: 32px;
-  }
   
   @media (max-width: 800px) {
-    a {
-    font-size: 20px;
-  }
-
   p {
     font-size: 14px;
   }
 
   section p:nth-of-type(2) {
   padding: 18px 0 12px 0;
+  font-size: 20px;
 }
 }
    
