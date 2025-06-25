@@ -1,7 +1,7 @@
 <template>
   <section id="contact">
     <p>Ich freue mich über eine Anfrage.</p>
-    <p>{{ email }}</p>
+    <p class="gradient-text">{{ email }}</p>
   </section>
 </template>
 

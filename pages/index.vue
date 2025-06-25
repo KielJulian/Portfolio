@@ -1,12 +1,13 @@
 <template>
   <div>
     <ButtonComponent />
-    <Navbar />
-    <Topcard />
+    <TopcardNew />
+    
+    <ProjectsSection />
 
-    <div id="portfolio" class="portfolio-itemlist">
+    <!-- <div id="projects" class="portfolio-itemlist">
       <div class="portfolio-titel">
-        <h3>Portfolio</h3>
+        <h3>Projekte</h3>
         <p>Hier sind einige meiner bisherigen Webdesign-Projekte.</p>
       </div>
 
@@ -50,7 +51,7 @@
     </template>
   </PortfolioItem>
 
-</div>
+</div> -->
 
   <Contact />
 

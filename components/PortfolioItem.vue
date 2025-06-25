@@ -59,6 +59,11 @@ img {
 .portfolio-image {
     border-radius: var(--border-radius-card);
     box-shadow: var(--shadow-card);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center;
 }
 
 .dark-mode .portfolio-image {

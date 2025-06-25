@@ -25,7 +25,7 @@
     background: none;
     border: none;
     padding: 0;
-    color: var(--white);
+    color: var(--text-grey);
     display: flex;
     align-items: center;
     justify-content: center;

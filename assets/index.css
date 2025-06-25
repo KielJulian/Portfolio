@@ -1,30 +1,4 @@
 :root {
-    --gray-0: #FFFFFF;
-    --gray-1: #D9D9D9;  
-    --gray-2: #B3B3B3;  
-    --gray-3: #8F8F8F;  
-    --gray-4: #6B6B6B;  
-    --gray-5: #494949;
-    --gray-6: #2A2A2A;  
-    --gray-7: #151515;  
-    --gray-8: #090909;  
-    --gray-9: #030303;  
-    --gray-10: #000000;
-
-    --white: var(--gray-0);
-    --rewhite: white;
-    --background: var(--gray-7);
-    --link-hover: var(--gray-3);
-    --line: var(--gray-6);
-    --blockquote: var(--gray-2);
-    --link: var(--gray-0);
-    --img-border: var(--gray-7);
-    
-    --border-radius-card: 16px;
-    --shadow-card: rgba(149, 157, 165, 0.2) 0px 8px 50px -12px;
-}
-
-.light-mode {
     --gray-0: #000000;
     --gray-1: #030303;  
     --gray-2: #090909;  
@@ -36,14 +10,83 @@
     --gray-8: #B3B3B3;  
     --gray-9: #D9D9D9;  
     --gray-10: #FFFFFF;
-    
-    --background: #f9f9f9;
+
+    --white: var(--gray-10);
+    --rewhite: white;
+    --background: #F6F6F6;
     --link-hover: var(--gray-7);
     --line: var(--gray-10);
+    --blockquote: var(--gray-2);
+    --link: var(--gray-0);
     --img-border: var(--gray-9);
+    --text-grey: #383D49;
+    --text-light-grey: #586073;
+    
+    --border-radius-card: 16px;
+    --shadow-card: rgba(149, 157, 165, 0.2) 0px 8px 50px -12px;
+
+      /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+  --spacing-3xl: 96px;
+  --spacing-4xl: 128px;
+
+  /* Typography */
+  --font-size-xxs: 10px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-2-5xl: 36px;
+  --font-size-3xl: 40px;
+  --font-size-4xl: 48px;
+  --font-size-5xl: 56px;
+  --font-size-6xl: 64px;
+
+  /* Layout */
+  --content-width-text: 700px;
+  --content-width: 1200px;
+  --navbar-width: 1400px;
+  --page-width: 2140px;
+
+  /* Border-radius */
+  --radius-tiny: 8px;
+  --radius-small: 15px;
+  --radius-large: 20px;
+
+  /* Timing functions */
+  --bounce-ease: cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.dark-mode {
+    --gray-0: #FFFFFF;
+    --gray-1: #D9D9D9;  
+    --gray-2: #B3B3B3;  
+    --gray-3: #8F8F8F;  
+    --gray-4: #6B6B6B;  
+    --gray-5: #494949;
+    --gray-6: #2A2A2A;  
+    --gray-7: #151515;  
+    --gray-8: #090909;  
+    --gray-9: #030303;  
+    --gray-10: #000000;
+    
+    --white: var(--gray-0);
+    --background: var(--gray-7);
+    --link-hover: var(--gray-3);
+    --line: var(--gray-6);
+    --link: var(--gray-0);
+    --img-border: var(--gray-7);
   }
 
-html.light-mode .topcard-content {
+html.dark-mode .topcard-content {
     filter: none;
 }
 
@@ -71,17 +114,33 @@ html.light-mode .topcard-content {
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+  }
+
 body {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Inter', sans-serif;
+    /* font-family: 'Source Code Pro', monospace; */
     background: var(--background);
-    color: var(--white);
+    color: var(--text-grey);
     padding: 0 1rem;
     margin: 0;
     -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6, hr {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Inter', sans-serif;
+    /* font-family: 'Space Mono', monospace; */
     letter-spacing: 1.2px;
     text-transform: uppercase;
     margin: 0;
@@ -91,7 +150,7 @@ h1, h2, h3, h4, h5, h6, hr {
 
 a {
     text-decoration: none;
-    color: var(--white);
+    color: var(--text-grey);
     font-size: inherit;
     font-family: inherit;
 }
@@ -109,3 +168,11 @@ p {
 a:hover, button:hover {
     cursor: pointer;
   }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}

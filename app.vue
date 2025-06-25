@@ -1,12 +1,13 @@
 <template>
   <div class="main">
+    <Navbar />
     <NuxtPage />
   </div>
 </template>
 
 <style scoped>
 .main {
-  max-width: 60rem;
+  max-width: var(--content-width);
   margin: 0 auto;
 }
 
@@ -16,7 +17,4 @@
 </style>
 
 <script setup>
-  import { inject } from '@vercel/analytics';
-
-  inject();
 </script>
