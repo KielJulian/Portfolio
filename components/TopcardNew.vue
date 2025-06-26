@@ -25,7 +25,6 @@
 }
 
 h1 {
-    font-size: 24px;
     margin-bottom: var(--spacing-md);
 }
 

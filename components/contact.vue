@@ -1,7 +1,9 @@
 <template>
-  <section id="contact">
+  <section id="contact" class="contact-section">
+    <div class="contact-content">
     <p>Ich freue mich über eine Anfrage.</p>
     <p class="gradient-text">{{ email }}</p>
+    </div>
   </section>
 </template>
 
@@ -11,9 +13,11 @@ const email = 'hi@juliankiel.dev';
 
   <style scoped>
  section {
+  height: 50vh;
      display: flex;
      flex-direction: column;
      align-items: center;
+     justify-content: center;
     }
 
 section p:nth-of-type(1) {
@@ -21,9 +25,16 @@ section p:nth-of-type(1) {
 }
 
 section p:nth-of-type(2) {
-  border-bottom: 2px solid var(--white); 
-  padding: 32px 0 24px 0;
-  font-size: 32px;
+  border-bottom: 2px solid var(--text-grey);
+  padding: 24px 0 16px 0;
+  font-size: var(--font-size-5xl);
+}
+
+.contact-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
 }
   
   @media (max-width: 800px) {

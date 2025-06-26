@@ -85,14 +85,14 @@ const scrollToSection = (id) => {
 }
 
 .button-icon {
-  width: 1.4em;
-  margin-left: 0.5em;
+  width: 16px;
+  margin-left: var(--spacing-xs);
   display: flex;
   transition: transform 0.4s ease;
 }
 
 .text-link:hover .button-icon {
-  transform: translateX(5px);
+  transform: translateX(3px);
   transition: transform 0.3s var(--bounce-ease);
   color: var(--color-link);
 }

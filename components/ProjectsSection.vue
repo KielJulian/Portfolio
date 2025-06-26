@@ -1,24 +1,32 @@
 <template>
   <section id="projects-new" class="projects-section">
-    <div class="section-header">
-      <h2>Projekte</h2>
-    </div>
-    
+    <BlurrFilter id="blur-and-scale" :stdDeviation="40" :saturate="1.5" :opacity="0.7" />
     <div class="projects-container">
       <!-- Screenshot Preview Area -->
       <div class="screenshot-preview">
-        <div class="screenshot-container">
+        <div 
+          class="screenshot-container"
+          @click="openProjectUrl"
+          title="Click to visit website"
+        >
           <img 
             :src="currentScreenshot" 
             :alt="`${activeProject.name} Screenshot`"
-            class="screenshot-image"
+            class="screenshot-image blurred-image"
             :key="currentScreenshot"
           >
+          <!-- <div class="click-overlay">
+            <div class="visit-text">Seite besuchen</div>
+          </div> -->
         </div>
       </div>
       
       <!-- Projects List -->
       <div class="projects-list">
+        <div class="section-header">
+          <h2>Projekte</h2>
+        </div>
+        
         <div 
           v-for="project in projects" 
           :key="project.id"
@@ -61,24 +69,43 @@ import { ref, computed } from 'vue'
 
 const projects = ref([
   {
+    id: '5',
+    name: 'Bahai Holzkirchen',
+    type: 'Webseite',
+    image: '/img/portfolio/bahai-holzkirchen.jpg',
+    url: 'https://bahai-holzkirchen.de',
+    roles: ['Frontend Development', 'UI/UX Design', 'Responsive Design', 'Performance Optimization']
+  },
+  {
+    id: '4',
+    name: 'Preview Page',
+    type: 'Webseite',
+    image: '/img/portfolio/01prepage.jpg',
+    url: 'https://01prepage.info',
+    roles: ['Frontend Development', 'UI/UX Design', 'Responsive Design', 'Performance Optimization']
+  },
+  {
     id: '3',
     name: 'Dr. Georg Schulze-Eyßing',
     type: 'Webseite',
-    image: '/img/portfolio/3.jpg',
+    image: '/img/portfolio/schulze-eyßing.jpg',
+    url: 'https://dr-schulze-eyssing.eu',
     roles: ['Frontend Development', 'UI/UX Design', 'Responsive Design', 'Performance Optimization']
   },
   {
     id: '2',
     name: 'Laserklinik Leimbachtal',
     type: 'Webseite',
-    image: '/img/portfolio/2.jpg',
+    image: '/img/portfolio/laserklinik-leimbachtal.jpg',
+    url: 'https://laserklinik-leimbachtal.de',
     roles: ['Full-Stack Development', 'UI/UX Design', 'Content Management', 'SEO Optimization']
   },
   {
     id: '1',
     name: 'Hausarztpraxis Leimbachtal',
     type: 'Webseite',
-    image: '/img/portfolio/1.jpg',
+    image: '/img/portfolio/hausarztpraxis-leimbachtal.jpg',
+    url: 'https://hausarztpraxis-leimbachtal.org',
     roles: ['Frontend Development', 'CMS Integration', 'Mobile Optimization', 'Accessibility']
   }
 ])
@@ -121,21 +148,17 @@ const toggleProject = (projectId) => {
     }
   }
 }
+
+const openProjectUrl = () => {
+  if (activeProject.value.url) {
+    window.open(activeProject.value.url, '_blank')
+  }
+}
 </script>
 
 <style scoped>
 .projects-section {
-  padding: var(--spacing-lg) 0;
-  height: 50vh;
-}
-
-.section-header {
-  margin-bottom: var(--spacing-lg);
-}
-
-.section-header h2 {
-  color: var(--text-grey);
-  font-weight: 600;
+  min-height: 50vh;
 }
 
 .projects-container {
@@ -146,12 +169,16 @@ const toggleProject = (projectId) => {
 
 .screenshot-preview {
   flex: 1;
-  border-radius: var(--border-radius-card);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  /* Set a fixed aspect ratio to prevent layout shifts */
-  aspect-ratio: 16 / 10;
+  /* border-radius: var(--border-radius-card); */
+  /* overflow: hidden; */
+  /* box-shadow: var(--shadow-card); */
+  /* Set a fixed height instead of aspect ratio to prevent changes when projects expand */
+  height: 400px;
   position: relative;
+}
+
+.screenshot-preview img {
+  border-radius: var(--border-radius-card);
 }
 
 .screenshot-container {
@@ -163,6 +190,31 @@ const toggleProject = (projectId) => {
   position: absolute;
   top: 0;
   left: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.click-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.screenshot-container:hover .click-overlay {
+  opacity: 1;
+}
+
+.visit-text {
+  color: white;
 }
 
 .screenshot-image {
@@ -178,6 +230,8 @@ const toggleProject = (projectId) => {
   flex: 1;
   display: flex;
   flex-direction: column;
+  /* Ensure the projects list matches the height of the screenshot */
+  min-height: 100%;
 }
 
 .project-item {
@@ -196,7 +250,6 @@ const toggleProject = (projectId) => {
   padding-right: var(--spacing-md);
   /* Prevent layout shift by using transform instead of margin changes */
   position: relative;
-  z-index: 1;
 }
 
 
@@ -308,6 +361,8 @@ const toggleProject = (projectId) => {
 @media (max-width: 800px) {
   .projects-section {
     padding: 4rem 0;
+    min-height: auto;
+    height: auto;
   }
   
   .section-header h2 {

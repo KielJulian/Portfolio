@@ -23,7 +23,7 @@ useHead({
 
 <style scoped>
 *:nth-child(n+2) {
-  color: var(--blockquote);
+  color: var(--text-grey);
 }
 .page-container {
   display: flex;

@@ -77,7 +77,10 @@
     --gray-8: #090909;  
     --gray-9: #030303;  
     --gray-10: #000000;
-    
+
+    --text-grey: #F6F6F6;
+    --text-light-grey: #B3B3B3;
+
     --white: var(--gray-0);
     --background: var(--gray-7);
     --link-hover: var(--gray-3);
@@ -138,15 +141,41 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6, hr {
-    font-family: 'Inter', sans-serif;
-    /* font-family: 'Space Mono', monospace; */
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    line-height: var(--line-height-tight);
     margin: 0;
-    padding: 0;
-    font-size: inherit;
-}
+  }
+  
+  h1 {
+    font-size: var(--font-size-3xl);
+    font-weight: 600;
+  }
+  
+  h2 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  h3 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  h4 {
+    font-size: var(--font-size-xl);
+  }
+  
+  h5 {
+    font-size: var(--font-size-lg);
+  }
+  
+  h6 {
+    font-size: var(--font-size-md);
+  }
+  
+  
+  p {
+    font-size: var(--font-size-base);
+  }
 
 a {
     text-decoration: none;
@@ -176,3 +205,7 @@ a:hover, button:hover {
     -webkit-text-fill-color: transparent;
     color: transparent;
 }
+
+.blurred-image {
+    filter: url(#blur-and-scale);
+  }
