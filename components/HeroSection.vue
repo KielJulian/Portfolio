@@ -1,8 +1,8 @@
 <template>
     <div class="topcard-container">
         <div class="topcard-content">
-            <h1>Hallo, ich bin Julian</h1>
-            <h2>Ich baue Websites, die funktionieren – ehrlich, schnell und individuell. Mit klarem <span class="gradient-text">Design</span>, starker Technik und einem Fokus auf <span class="gradient-text">Nutzerfreundlichkeit</span>.</h2>
+            <h1>Ich bin Julian</h1>
+            <h2>– und ich baue Websites, die funktionieren. Ehrlich, schnell und individuell. Mit klarem <span class="gradient-text">Design</span>, starker Technik und einem Fokus auf <span class="gradient-text">Nutzerfreundlichkeit</span>.</h2>
             <div class="topcard-links">
                 <TextLink to="#contact" text="Kontakt" :scroll="true" />
                 <TextLink to="#projects" text="Projekte" :scroll="true" />
@@ -13,7 +13,7 @@
 
 <style scoped>
 .topcard-container {
-    height: 85vh;
+    height: 100vh;
     max-width: var(--content-width-text);
     margin: 0 auto;
     display: flex;
@@ -31,7 +31,6 @@ h1 {
 h2 {
     font-size: var(--font-size-base);
     color: var(--text-light-grey);
-    font-weight: 600;
     letter-spacing: 0;
     text-transform: none;
     text-align: center;
@@ -40,8 +39,6 @@ h2 {
 
 .topcard-content {
     width: 100%;
-    min-height: 600px;
-    color: var(--text-grey);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +59,7 @@ h2 {
 @media (max-width: 800px) {
     .topcard-container {
         align-items: flex-start;
-        height: calc(100svh - (67px));
+        height: calc(100svh - (52px));
         max-height: 1200px;
     }
     

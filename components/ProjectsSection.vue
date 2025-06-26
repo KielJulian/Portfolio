@@ -88,7 +88,7 @@ const projects = ref([
     type: 'Webseite',
     image: '/img/portfolio/bahai-holzkirchen.jpg',
     url: 'https://bahai-holzkirchen.de',
-    roles: ['Frontend Development', 'UI/UX Design', 'Responsive Design', 'Performance Optimization']
+    roles: ['Frontend Development', 'UI/UX Design', 'CMS Integration', 'Responsive Design', 'Performance Optimization']
   },
   {
     id: '4',
@@ -112,7 +112,7 @@ const projects = ref([
     type: 'Webseite',
     image: '/img/portfolio/laserklinik-leimbachtal.jpg',
     url: 'https://laserklinik-leimbachtal.de',
-    roles: ['Full-Stack Development', 'UI/UX Design', 'Content Management', 'SEO Optimization']
+    roles: ['Frontend Development', 'Backend Development', 'Responsive Design']
   },
   {
     id: '1',
@@ -120,7 +120,7 @@ const projects = ref([
     type: 'Webseite',
     image: '/img/portfolio/hausarztpraxis-leimbachtal.jpg',
     url: 'https://hausarztpraxis-leimbachtal.org',
-    roles: ['Frontend Development', 'CMS Integration', 'Mobile Optimization', 'Accessibility']
+    roles: ['Frontend Development', 'UI/UX Design', 'Mobile Optimization', 'Accessibility']
   }
 ])
 
@@ -173,22 +173,20 @@ const openProjectUrl = (url) => {
 <style scoped>
 .projects-section {
   min-height: 50vh;
+  margin-top: 100px;
 }
 
 .projects-container {
   display: flex;
   gap: var(--spacing-lg);
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .screenshot-preview {
   flex: 1;
-  /* border-radius: var(--border-radius-card); */
-  /* overflow: hidden; */
-  /* box-shadow: var(--shadow-card); */
-  /* Set a fixed height instead of aspect ratio to prevent changes when projects expand */
-  height: 400px;
   position: relative;
+  height: 450px;
+  max-width: 600px;
 }
 
 .screenshot-preview img {
@@ -228,7 +226,9 @@ const openProjectUrl = (url) => {
 }
 
 .visit-text {
-  color: white;
+  background: var(--card-background);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
 }
 
 .screenshot-image {
@@ -238,31 +238,33 @@ const openProjectUrl = (url) => {
   object-position: center;
   display: block;
   transition: opacity 0.3s ease;
+  border: 1px solid var(--card-background);
 }
 
 .projects-list {
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* Ensure the projects list matches the height of the screenshot */
-  min-height: 100%;
+  gap: var(--spacing-xs);
+  z-index: 1;
 }
 
 .project-item {
-  border-bottom: 1px solid color-mix(in srgb, var(--text-grey) 20%, transparent);
   cursor: pointer;
   transition: all 0.2s ease, border-bottom 0.3s ease 0.1s;
   overflow: hidden;
+  background: var(--card-background);
+  border-radius: var(--border-radius-card);
+  padding: 0 var(--spacing-md) 0;
 }
 
 .project-item.expanded {
-  margin-top: var(--spacing-md);
-  background: var(--rewhite);
-  border-radius: var(--border-radius-card);
-  border: none;
-  padding: 0 var(--spacing-md) var(--spacing-md);
+  /* margin-top: var(--spacing-md); */
+  /* background: var(--card-background); */
+  /* border-radius: var(--border-radius-card); */
+  /* padding: 0 var(--spacing-md) var(--spacing-md); */
   /* Prevent layout shift by using transform instead of margin changes */
-  position: relative;
+  padding: 0 var(--spacing-md) var(--spacing-md);
 }
 
 
@@ -348,10 +350,6 @@ const openProjectUrl = (url) => {
   font-weight: 500;
 }
 
-.dark-mode .role-tag {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--line);
-}
 
 /* Mobile Screenshot Section - Hidden on desktop */
 .mobile-screenshot-section {
@@ -425,8 +423,7 @@ const openProjectUrl = (url) => {
 
 @media (max-width: 800px) {
   .projects-section {
-    min-height: auto;
-    height: auto;
+    min-height: 100svh;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -436,6 +433,10 @@ const openProjectUrl = (url) => {
     width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  .project-item {
+    padding: 0 var(--spacing-sm) 0;
   }
 
   .project-item.expanded {

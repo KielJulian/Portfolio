@@ -14,6 +14,7 @@
     --white: var(--gray-10);
     --rewhite: white;
     --background: #F6F6F6;
+    --card-background: #FFFFFF;
     --link-hover: var(--gray-7);
     --line: var(--gray-10);
     --blockquote: var(--gray-2);
@@ -81,6 +82,7 @@
     --text-grey: #F6F6F6;
     --text-light-grey: #B3B3B3;
 
+    --card-background: var(--gray-6);
     --white: var(--gray-0);
     --background: var(--gray-7);
     --link-hover: var(--gray-3);
@@ -145,11 +147,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
     line-height: var(--line-height-tight);
     margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.02em;
   }
   
   h1 {
     font-size: var(--font-size-3xl);
-    font-weight: 600;
   }
   
   h2 {
@@ -175,6 +178,8 @@ h1, h2, h3, h4, h5, h6 {
   
   p {
     font-size: var(--font-size-base);
+    font-weight: 600;
+    letter-spacing: 0.02em;
   }
 
 a {

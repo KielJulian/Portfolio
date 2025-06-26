@@ -11,17 +11,17 @@
 const email = 'hi@juliankiel.dev';
 </script>
 
-  <style scoped>
- section {
+<style scoped>
+.contact-section {
   height: 50vh;
      display: flex;
      flex-direction: column;
-     align-items: center;
+     align-items: flex-start;
      justify-content: center;
     }
 
 section p:nth-of-type(1) {
-  color: var(--blockquote);
+  color: var(--text-grey);
 }
 
 section p:nth-of-type(2) {
@@ -30,21 +30,18 @@ section p:nth-of-type(2) {
   font-size: var(--font-size-5xl);
 }
 
-.contact-section {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-
-}
   
-  @media (max-width: 800px) {
+@media (max-width: 800px) {
+    .contact-section {
+      height: 30svh;
+      margin-top: 100px;
+    }
   p {
-    font-size: 14px;
   }
 
   section p:nth-of-type(2) {
   padding: 18px 0 12px 0;
-  font-size: 20px;
+  font-size: var(--font-size-3xl);
 }
 }
    
