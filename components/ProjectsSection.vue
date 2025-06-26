@@ -1,12 +1,12 @@
 <template>
-  <section id="projects-new" class="projects-section">
-    <BlurrFilter id="blur-and-scale" :stdDeviation="40" :saturate="1.5" :opacity="0.7" />
+  <section id="projects" class="projects-section">
+    <BlurrFilter id="blur-and-scale" :stdDeviation="70" :saturate="3" :opacity="0.6" />
     <div class="projects-container">
       <!-- Screenshot Preview Area -->
       <div class="screenshot-preview">
         <div 
           class="screenshot-container"
-          @click="openProjectUrl"
+          @click="openProjectUrl(activeProject.url)"
           title="Click to visit website"
         >
           <img 
@@ -15,9 +15,9 @@
             class="screenshot-image blurred-image"
             :key="currentScreenshot"
           >
-          <!-- <div class="click-overlay">
+          <div class="click-overlay">
             <div class="visit-text">Seite besuchen</div>
-          </div> -->
+          </div>
         </div>
       </div>
       
@@ -40,6 +40,20 @@
             <div class="project-name">{{ project.name }}</div>
             <div class="project-right">
               <div class="project-type">{{ project.type }}</div>
+            </div>
+          </div>
+          
+          <!-- Mobile Screenshot Section - Separate from project details -->
+          <div class="mobile-screenshot-section" v-if="expandedProject === project.id">
+            <div class="mobile-screenshot-container" @click="openProjectUrl(project.url)">
+              <img 
+                :src="project.image" 
+                :alt="`${project.name} Screenshot`"
+                class="mobile-screenshot-image"
+              >
+              <div class="mobile-click-overlay">
+                <div class="visit-text">Seite besuchen</div>
+              </div>
             </div>
           </div>
           
@@ -149,9 +163,9 @@ const toggleProject = (projectId) => {
   }
 }
 
-const openProjectUrl = () => {
-  if (activeProject.value.url) {
-    window.open(activeProject.value.url, '_blank')
+const openProjectUrl = (url) => {
+  if (url) {
+    window.open(url, '_blank')
   }
 }
 </script>
@@ -246,8 +260,7 @@ const openProjectUrl = () => {
   background: var(--rewhite);
   border-radius: var(--border-radius-card);
   border: none;
-  padding-left: var(--spacing-md);
-  padding-right: var(--spacing-md);
+  padding: 0 var(--spacing-md) var(--spacing-md);
   /* Prevent layout shift by using transform instead of margin changes */
   position: relative;
 }
@@ -257,7 +270,7 @@ const openProjectUrl = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md) 0;
+  margin: var(--spacing-md) 0;
   transition: all 0.3s ease;
 }
 
@@ -285,7 +298,6 @@ const openProjectUrl = () => {
 }
 
 .project-details {
-  padding: 0 var(--spacing-md) var(--spacing-md) 0;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -295,7 +307,6 @@ const openProjectUrl = () => {
 .project-item.expanded .project-details {
   max-height: 300px;
   opacity: 1;
-  padding-bottom: var(--spacing-md);
 }
 
 @keyframes slideDown {
@@ -342,15 +353,69 @@ const openProjectUrl = () => {
   border-color: var(--line);
 }
 
+/* Mobile Screenshot Section - Hidden on desktop */
+.mobile-screenshot-section {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .projects-container {
     flex-direction: column;
     gap: 4rem;
   }
-  
+
   .screenshot-preview {
-    order: 2;
+    display: none;
+  }
+  
+  .mobile-screenshot-section {
+    display: block;
+    max-height: 300px;
+    opacity: 1;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .mobile-screenshot-container {
+    width: 100%;
+    height: 250px;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-screenshot-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+  
+  .mobile-click-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+  
+  .mobile-screenshot-container:hover .mobile-click-overlay {
+    opacity: 1;
   }
   
   .projects-list {
@@ -360,45 +425,29 @@ const openProjectUrl = () => {
 
 @media (max-width: 800px) {
   .projects-section {
-    padding: 4rem 0;
     min-height: auto;
     height: auto;
-  }
-  
-  .section-header h2 {
-    font-size: 32px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   .projects-container {
-    gap: 3rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .project-item.expanded {
+    padding: 0 var(--spacing-sm) var(--spacing-sm);
   }
   
-  .project-header {
-    padding: 1rem;
+  .projects-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
-  
-  .project-item:hover .project-header {
-    padding-left: 1.5rem;
-  }
-  
-  .project-right {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.5rem;
-  }
-  
-  .project-name {
-    font-size: 20px;
-  }
-  
-  .project-type {
-    font-size: 12px;
-  }
-  
-  .project-details {
-    padding: 0 1rem 1rem 1rem;
-  }
-  
+
   .tags-container {
     gap: 0.5rem;
   }

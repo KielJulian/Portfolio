@@ -136,7 +136,7 @@ body {
     /* font-family: 'Source Code Pro', monospace; */
     background: var(--background);
     color: var(--text-grey);
-    padding: 0 1rem;
+    padding: 0 var(--spacing-sm);
     margin: 0;
     -webkit-font-smoothing: antialiased;
 }
