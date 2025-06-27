@@ -288,7 +288,7 @@ const openProjectUrl = (url) => {
 }
 
 .project-name {
-  /* font-weight: 600; */
+  font-weight: 600;
 }
 
 .project-right {
