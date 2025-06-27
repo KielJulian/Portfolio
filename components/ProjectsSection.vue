@@ -55,6 +55,7 @@
                 class="mobile-screenshot-image"
                 width="400"
                 height="250"
+                loading="eager"
               />
               <div class="mobile-click-overlay">
                 <div class="visit-text">Seite besuchen</div>
