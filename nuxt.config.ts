@@ -19,9 +19,8 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'preload', href: '/fonts/SpaceMono-Regular.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-        { rel: 'preload', href: '/fonts/SpaceMono-Bold.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-        { rel: 'preload', href: '/fonts/SourceCodePro.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }
+        { rel: 'preload', href: '/fonts/Inter-VariableFont_opsz,wght.ttf', as: 'font', type: 'font/ttf', crossorigin: 'anonymous' },
+        { rel: 'preload', href: '/fonts/Inter-Italic-VariableFont_opsz,wght.ttf', as: 'font', type: 'font/ttf', crossorigin: 'anonymous' }
       ],
     },
   },
