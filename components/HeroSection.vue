@@ -57,6 +57,14 @@ h2 {
 }
 
 @media (max-width: 800px) {
+    h1 {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    h2 {
+        font-size: var(--font-size-base);
+    }
     .topcard-container {
         align-items: flex-start;
         height: calc(100svh - (52px));

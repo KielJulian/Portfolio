@@ -78,6 +78,8 @@ const scrollToSection = (id) => {
   text-decoration: none;
   color: inherit;
   transition: color 0.3s ease;
+  text-transform: uppercase;
+
 }
 
 .text-link:hover {

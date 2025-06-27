@@ -9,12 +9,15 @@
           @click="openProjectUrl(activeProject.url)"
           title="Click to visit website"
         >
-          <img 
+          <NuxtImg 
             :src="currentScreenshot" 
             :alt="`${activeProject.name} Screenshot`"
             class="screenshot-image blurred-image"
             :key="currentScreenshot"
-          >
+            width="600"
+            height="450"
+            loading="eager"
+          />
           <div class="click-overlay">
             <div class="visit-text">Seite besuchen</div>
           </div>
@@ -46,11 +49,13 @@
           <!-- Mobile Screenshot Section - Separate from project details -->
           <div class="mobile-screenshot-section" v-if="expandedProject === project.id">
             <div class="mobile-screenshot-container" @click="openProjectUrl(project.url)">
-              <img 
+              <NuxtImg 
                 :src="project.image" 
                 :alt="`${project.name} Screenshot`"
                 class="mobile-screenshot-image"
-              >
+                width="400"
+                height="250"
+              />
               <div class="mobile-click-overlay">
                 <div class="visit-text">Seite besuchen</div>
               </div>
@@ -85,15 +90,15 @@ const projects = ref([
   {
     id: '5',
     name: 'Bahai Holzkirchen',
-    type: 'Webseite',
+    type: 'Nuxt.js',
     image: '/img/portfolio/bahai-holzkirchen.jpg',
     url: 'https://bahai-holzkirchen.de',
     roles: ['Frontend Development', 'UI/UX Design', 'CMS Integration', 'Responsive Design', 'Performance Optimization']
   },
   {
     id: '4',
-    name: 'Preview Page',
-    type: 'Webseite',
+    name: 'Vorschau Seite',
+    type: 'Nuxt.js',
     image: '/img/portfolio/01prepage.jpg',
     url: 'https://01prepage.info',
     roles: ['Frontend Development', 'UI/UX Design', 'Responsive Design', 'Performance Optimization']
@@ -101,7 +106,7 @@ const projects = ref([
   {
     id: '3',
     name: 'Dr. Georg Schulze-Eyßing',
-    type: 'Webseite',
+    type: 'Wordpress',
     image: '/img/portfolio/schulze-eyßing.jpg',
     url: 'https://dr-schulze-eyssing.eu',
     roles: ['Frontend Development', 'UI/UX Design', 'Responsive Design', 'Performance Optimization']
@@ -109,7 +114,7 @@ const projects = ref([
   {
     id: '2',
     name: 'Laserklinik Leimbachtal',
-    type: 'Webseite',
+    type: 'Wordpress',
     image: '/img/portfolio/laserklinik-leimbachtal.jpg',
     url: 'https://laserklinik-leimbachtal.de',
     roles: ['Frontend Development', 'Backend Development', 'Responsive Design']
@@ -117,7 +122,7 @@ const projects = ref([
   {
     id: '1',
     name: 'Hausarztpraxis Leimbachtal',
-    type: 'Webseite',
+    type: 'Wordpress',
     image: '/img/portfolio/hausarztpraxis-leimbachtal.jpg',
     url: 'https://hausarztpraxis-leimbachtal.org',
     roles: ['Frontend Development', 'UI/UX Design', 'Mobile Optimization', 'Accessibility']
@@ -258,6 +263,11 @@ const openProjectUrl = (url) => {
   padding: 0 var(--spacing-md) 0;
 }
 
+.project-item:hover {
+  transform: translatex(-8px);
+  transition: all 0.2s ease;
+}
+
 .project-item.expanded {
   /* margin-top: var(--spacing-md); */
   /* background: var(--card-background); */
@@ -265,6 +275,7 @@ const openProjectUrl = (url) => {
   /* padding: 0 var(--spacing-md) var(--spacing-md); */
   /* Prevent layout shift by using transform instead of margin changes */
   padding: 0 var(--spacing-md) var(--spacing-md);
+  transform: translatex(-8px);
 }
 
 
@@ -287,7 +298,7 @@ const openProjectUrl = (url) => {
 }
 
 .project-type {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   color: var(--text-light-grey);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -439,8 +450,13 @@ const openProjectUrl = (url) => {
     padding: 0 var(--spacing-sm) 0;
   }
 
+  .project-item:hover {
+    transform: none;
+  }
+
   .project-item.expanded {
     padding: 0 var(--spacing-sm) var(--spacing-sm);
+    transform: none;
   }
   
   .projects-list {

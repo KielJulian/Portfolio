@@ -25,7 +25,11 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ['@nuxtjs/color-mode'],
+  modules: [
+    '@nuxtjs/color-mode',
+    '@nuxt/image'
+  ],
+
   colorMode: {
     preference: 'light',
     fallback: 'light',
@@ -36,5 +40,10 @@ export default defineNuxtConfig({
     storage: 'localStorage',
     storageKey: 'nuxt-color-mode',
     disableTransition: true
+  },
+
+  image: {
+    format: ['webp'],
+    quality: 85
   }
 });
