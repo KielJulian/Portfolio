@@ -29,7 +29,7 @@ h1 {
 }
 
 h2 {
-    color: var(--text-light-grey);
+    color: var(--text-grey);
     text-transform: none;
     text-align: center;
     margin-bottom: var(--spacing-sm);
