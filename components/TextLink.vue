@@ -2,7 +2,7 @@
   <NuxtLink 
     v-if="!scroll"
     :to="to" 
-    class="text-link"
+    class="link"
   >
     <span>{{ text }}</span>
     <svg
@@ -24,7 +24,7 @@
   <a 
     v-else
     @click="scrollToSection(to)"
-    class="text-link"
+    class="link"
     style="cursor: pointer;"
   >
     <span>{{ text }}</span>
@@ -72,30 +72,17 @@ const scrollToSection = (id) => {
 </script>
 
 <style scoped>
-.text-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
-
-}
-
-.text-link:hover {
-  color: var(--color-link);
-}
-
 .button-icon {
-  width: 16px;
+  width: 18px;
   margin-left: var(--spacing-xs);
   display: flex;
   transition: transform 0.4s ease;
+  stroke: var(--link-hover);
 }
 
-.text-link:hover .button-icon {
+.link:hover .button-icon {
   transform: translateX(3px);
   transition: transform 0.3s var(--bounce-ease);
-  color: var(--color-link);
+  stroke: #3b82f6;
 }
 </style> 

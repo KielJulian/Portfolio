@@ -1,8 +1,8 @@
 <template>
     <div class="topcard-container">
         <div class="topcard-content">
-            <h1>Ich bin Julian</h1>
-            <h2>– und ich baue Websites, die funktionieren. Ehrlich, schnell und individuell. Mit klarem <span class="gradient-text">Design</span>, starker Technik und einem Fokus auf <span class="gradient-text">Nutzerfreundlichkeit</span>.</h2>
+            <h1>Julian Kiel</h1>
+            <h2>Ich baue Websites, die funktionieren. Ehrlich, schnell und individuell. Mit klarem <span class="gradient-text">Design</span>, starker Technik und einem Fokus auf <span class="gradient-text">Nutzerfreundlichkeit</span>.</h2>
             <div class="topcard-links">
                 <TextLink to="#contact" text="Kontakt" :scroll="true" />
                 <TextLink to="#projects" text="Projekte" :scroll="true" />
@@ -25,13 +25,11 @@
 }
 
 h1 {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
 }
 
 h2 {
-    font-size: var(--font-size-base);
     color: var(--text-light-grey);
-    letter-spacing: 0;
     text-transform: none;
     text-align: center;
     margin-bottom: var(--spacing-sm);
@@ -48,7 +46,7 @@ h2 {
 
 .topcard-links {
     display: flex;
-    gap: 16px;
+    gap: var(--spacing-xl);
 }
 
 .topcard-content > * {
@@ -57,13 +55,8 @@ h2 {
 }
 
 @media (max-width: 800px) {
-    h1 {
-        font-size: var(--font-size-3xl);
-        margin-bottom: var(--spacing-sm);
-    }
-
     h2 {
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-xl);
     }
     .topcard-container {
         align-items: flex-start;
@@ -74,9 +67,9 @@ h2 {
     .topcard-content {
         min-height: 100%;
     }
-    
-    p {
-        font-size: 14px;
+
+    .topcard-links {
+        gap: var(--spacing-md);
     }
 }
 </style>

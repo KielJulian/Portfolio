@@ -1,37 +1,46 @@
 <template>
     <nav>
-      <div class="logo gradient-text">Julian Kiel</div>
+      <div class="logo">Julian Kiel</div>
               <div class="nav-items">
-          <a @click="navigateToSection('home')">Home</a>
-          <a @click="navigateToSection('projects')">Projekte</a>
-          <a @click="navigateToSection('contact')">Kontakt</a>
+          <a class="link" @click="navigateToSection('home')"><span>Home</span></a>
+          <a class="link" @click="navigateToSection('projects')"><span>Projekte</span></a>
+          <a class="link" @click="navigateToSection('contact')"><span>Kontakt</span></a>
         </div>
     </nav>
 </template>
   
 <style scoped>
     nav {
-        padding: 1rem 0 1rem 0;
+        padding: var(--spacing-sm) 0 var(--spacing-sm) 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-weight: 600;
 }
     
     .nav-items {
         display: flex;
-        gap: var(--spacing-xs);
-}
-a:hover {
-  color: var(--link-hover);
+        gap: var(--spacing-sm);
 }
 
+
 .nav-items a:nth-child(2)::before,
+.nav-items a:nth-child(3)::before {
+  content: "/ ";
+  margin-right: var(--spacing-sm);
+}
+
+@media (max-width: 800px) {
+    .nav-items {
+        gap: var(--spacing-xs);
+    }
+
+    .nav-items a:nth-child(2)::before,
 .nav-items a:nth-child(3)::before {
   content: "/ ";
   margin-right: var(--spacing-xs);
 }
 
+}
 </style>
 
 <script setup>
